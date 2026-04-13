@@ -48,6 +48,7 @@ public class MainController {
             Storage.write(generateLine());
         }else{
             System.err.println("Hiba! 5 szám kell!");
+            App.setRoot("dialogScene");
         }
     }
 
