@@ -45,6 +45,7 @@ public class MainController {
         System.out.println(countSelected());
         if(countSelected() == 5) {
             System.out.println("Mentés");
+            Storage.write(generateLine());
         }else{
             System.err.println("Hiba! 5 szám kell!");
         }
@@ -59,4 +60,16 @@ public class MainController {
         }
         return count;
     }
+
+    String generateLine() {
+        StringBuilder sb = new StringBuilder();
+        for(CheckBox box: boxes) {
+            if(box.isSelected()) {
+                sb.append(box.getText());
+                sb.append(",");
+            }
+        }
+        return sb.toString();
+    }
+
 }
